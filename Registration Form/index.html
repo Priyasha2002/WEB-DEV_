@@ -9,41 +9,57 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h2>Registration Form</h2>
-        <form id="registrationForm">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h2 class="text-center">Registration Form</h2>
             </div>
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+            <div class="card-body">
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password" required>
-            </div>
-            <div class ="center-button">
-                <button type="submit" class="btn btn-primary">Register</button>
-            </div>
-            
-        </form>
+        </div>
     </div>
 
     <script>
-        
+        $(document).ready(function() {
+            $('#registrationForm').on('submit', function(event) {
+                event.preventDefault();
+                var username = $('#username').val();
+                var email = $('#email').val();
+                var password = $('#password').val();
+                var confirmPassword = $('#confirmPassword').val();
 
-                $(document).ready(function() {
-            $('#registrationForm').on('submit', function(event) {
-                event.preventDefault();
-                var username = $('#username').val();
-                var email = $('#email').val();
-                var password = $('#password').val();
-                alert('Username: ' + username + '\nEmail: ' + email + '\nPassword: ' + "....");
-                $(this).trigger('reset'); // Reset the form after submission
-            });
-        });
+                
+if (password !== confirmPassword) {
+                    alert("Password not correct")
+                    return;
+}
+                
 
+
+                alert('Username: ' + username + '\nEmail: ' + email + '\nPassword: ' + password);
+                $(this).trigger('reset'); // Reset the form after submission
+            });
+        });
     </script>
 </body>
 </html>
