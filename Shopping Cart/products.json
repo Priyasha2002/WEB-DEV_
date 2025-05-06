@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "name": "Stationery Items",
+        "price": 100
+    },
+    {
+        "id": 2,
+        "name": "Laptop Charger",
+        "price": 200
+    },
+    {
+        "id": 3,
+        "name": "Water Bottles",
+        "price": 300
+    }
+]
